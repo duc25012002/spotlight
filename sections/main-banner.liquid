@@ -6,60 +6,191 @@
       section.settings.image
       | image_url: width: section.settings.image.width
       | image_tag:
-        widths: '375,750,1100,1500,1780,2000,2400,2600,2800,3000,3200,3400,3600,3800,4000',
+        widths: '100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000',
         alt: 'This is a main banner image',
         sizes: '100vw',
-        class: 'img'
+        class: 'img',
+        loading: 'eager'
     }}
-    <div class="banner-content">
-      <p class="banner-title">{{ section.settings.title }}</p>
-      <p class="banner-subtitle">{{ section.settings.subtitle }}</p>
+    <text-banner>
+      <div class="banner-content">
+        <div class="banner">{{ section.settings.title }}</div>
+        <p class="banner">{{ section.settings.subtitle }}</p>
+      </div>
+      <div class="banner-button" id="{{section.id}}">
+        <button>Shop Now</button>
+      </div>
+    </text-banner>
+    <div class="achievement-content" id="{{section.id}}">
+      {% content_for "blocks" %}
     </div>
   </div>
 {% endif %}
 
 <style>
-    .img-banner {
-      position: relative;
+    #{{ section.id }} img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 950px;
-      overflow: hidden;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    #{{ section.id }} button {
+      background-color: #000;
+      color: #fff;
+      height: 3em;
+      width: 10em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
     }
 
-    #{{ section.id }} img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
+    .banner-button {
+      padding: {{ section.settings.range-option }}px;
+      position: absolute;
+      bottom: 10%;
+      display: flex;
+      justify-content: start;
+      width: 100%;
+    }
 
-  .banner-content {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    z-index: 1;
-  }
+    .img-banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: {{ section.settings.range-option }}px;
+      }
 
-  .banner-title {
-    font-size: 7rem;
-    font-weight: bold;
-    margin: 0;
-    padding-left: {{ section.settings.range-option }}px;
-    text-align: {{ section.settings.text-align }};
-  }
+      .achievement-content {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+     .banner-content {
+        container-type: inline-size;
+        container-name: banner-container;
+      }
+     .banner:first-child {
+        position: absolute;
+        width: 100%;
+        -webkit-line-clamp: 2 !important;
+        left: 0;
+        font-weight: bold;
+        line-height: 0.5;
+        margin: 0;
+        padding: {{ section.settings.range-option }}px;
+        text-align: {{ section.settings.text-align }};
+        color: {{ section.settings.color-title }};
+        transition-delay: 0.1s;
+        transition: 0.3s linear;
+        animation: bounce-in-top 1s both;
+    }
+      .banner:last-child {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        margin: 0;
+        padding: {{ section.settings.range-option }}px;
+        text-align: {{ section.settings.text-align }};
+        color: {{ section.settings.color-title }};
+        transition-delay: 0.1s;
+        transition: 0.3s linear;
+        animation: bounce-in-top 1s both;
+    }
 
-  .banner-subtitle {
-    font-size: 3rem;
-    margin: 0;
-    padding-left: {{ section.settings.range-option }}px;
-    text-align: {{ section.settings.text-align }};
+
+    @keyframes bounce-in-top {
+    0% {
+      -webkit-transform: translateY(-500px);
+      transform: translateY(-500px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: translateY(-65px);
+      transform: translateY(-65px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: translateY(-28px);
+      transform: translateY(-28px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    90% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
   }
 </style>
 
+{% style %}
+  @container banner-container (max-width: 992px) {
+    .banner:first-child {
+      font-size: 5rem !important;
+      top: 10vh;
+    }
+    .banner:last-child {
+      font-size: 2rem;
+      top: 35vh;
+    }
+  }
+
+  @container banner-container (min-width: 993px) {
+    .banner:first-child {
+      font-size: 7rem !important;
+      top: 10vh;
+    }
+    .banner:last-child {
+      font-size: 2rem;
+      top: 50vh;
+    }
+  }
+{% endstyle %}
+
+<script>
+  {
+    {
+      'main-banner.js' | asset_url;
+    }
+  }
+  defer;
+</script>
 {% schema %}
 {
   "name": "Main Banner",
@@ -68,10 +199,9 @@
   "class": "main",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "title",
-      "label": "Title",
-      "placeholder": "This is my shopify"
+      "label": "Title"
     },
     {
       "type": "text",
@@ -111,19 +241,23 @@
           "label": "Right"
         }
       ]
+    },
+    {
+      "type": "color",
+      "id": "color-title",
+      "label": "Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color-subtitle",
+      "label": "Subtitle Color",
+      "default": "#FFFFFF"
     }
   ],
   "blocks": [
     {
-      "type": "main-banner",
-      "name": "Main Banner",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text"
-        }
-      ]
+      "type": "achivement"
     }
   ],
   "presets": [

@@ -1,0 +1,65 @@
+<div class="achievement-item">
+  <div>{{ block.settings['number-brand'] }}</div>
+  <div>{{ block.settings['text-brand'] }}</div>
+</div>
+
+<div class="achievement-item">
+  <div>{{ block.settings['number-quality'] }}</div>
+  <div>{{ block.settings['text-quality'] }}</div>
+</div>
+
+<div class="achievement-item">
+  <div>{{ block.settings['number-customer'] }}</div>
+  <div>{{ block.settings['text-customer'] }}</div>
+</div>
+
+<style>
+  .achievement-item > div:first-child {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Achievement",
+  "tag": null,
+  "settings": [
+    {
+      "type": "number",
+      "id": "number-brand",
+      "label": "Number Brand"
+    },
+    {
+      "type": "text",
+      "id": "text-brand",
+      "label": "Text Brand"
+    },
+    {
+      "type": "number",
+      "id": "number-quality",
+      "label": "Number Quality"
+    },
+    {
+      "type": "text",
+      "id": "text-quality",
+      "label": "Text Quality"
+    },
+    {
+      "type": "number",
+      "id": "number-customer",
+      "label": "Number Customer"
+    },
+    {
+      "type": "text",
+      "id": "text-customer",
+      "label": "Text Customer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Achievement"
+    }
+  ]
+}
+{% endschema %}

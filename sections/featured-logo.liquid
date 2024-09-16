@@ -1,0 +1,57 @@
+<div class="logo-banner">
+  {% for block in section.blocks %}
+    {{ block.settings.logo | image_url: width: 100 | image_tag: class: 'logo-image' }}
+  {% endfor %}
+</div>
+
+<style>
+  .logo-banner {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+  }
+  .logo-image {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Logos",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Logos",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

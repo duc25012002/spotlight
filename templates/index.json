@@ -1,5 +1,77 @@
 {
   "sections": {
+    "main_banner_GHHeKg": {
+      "type": "main-banner",
+      "blocks": {
+        "achivement_caTi3t": {
+          "type": "achivement",
+          "settings": {
+            "number-brand": 200,
+            "text-brand": "International Brands",
+            "number-quality": 2000,
+            "text-quality": "High-Quality Products",
+            "number-customer": 30000,
+            "text-customer": "Happy Customers"
+          }
+        }
+      },
+      "block_order": [
+        "achivement_caTi3t"
+      ],
+      "settings": {
+        "title": "<p>FIND CLOTHES <\/p><p>THAT MATCHES <\/p><p>YOUR STYLE <\/p>",
+        "subtitle": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+        "image": "shopify:\/\/shop_images\/theme_cover_image.jpg",
+        "range-option": 30,
+        "text-align": "left",
+        "color-title": "#121212",
+        "color-subtitle": "#ffffff"
+      }
+    },
+    "featured_logo_En8LCF": {
+      "type": "featured-logo",
+      "blocks": {
+        "logo_NKiaag": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/ck.svg"
+          }
+        },
+        "logo_TwzNKA": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/prada.svg"
+          }
+        },
+        "logo_WhxKqT": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/gucci.svg"
+          }
+        },
+        "logo_QgtWdP": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/zara.svg"
+          }
+        },
+        "logo_Vahp3J": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/versace.svg"
+          }
+        }
+      },
+      "block_order": [
+        "logo_NKiaag",
+        "logo_TwzNKA",
+        "logo_WhxKqT",
+        "logo_QgtWdP",
+        "logo_Vahp3J"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -14,13 +86,13 @@
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "outline",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
@@ -30,6 +102,8 @@
     }
   },
   "order": [
+    "main_banner_GHHeKg",
+    "featured_logo_En8LCF",
     "featured_collection"
   ]
 }

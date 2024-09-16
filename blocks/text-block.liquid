@@ -1,0 +1,33 @@
+
+
+
+{% schema %}
+{
+  "name": "Text Block",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "text-size",
+      "label": "Text Size",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font-weight",
+      "label": "Font Weight",
+      "min": 100,
+      "max": 800,
+      "step": 100,
+      "default": 400
+    }
+  ]
+}
+{% endschema %}
