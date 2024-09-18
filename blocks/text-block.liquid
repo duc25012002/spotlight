@@ -1,32 +1,63 @@
+<div
+  class="text"
+  style="
+    --text-size: {{ block.settings.font_size | divided_by: 16 }}rem;
+    --text-weight: {{ block.settings.font_weight }};
+    --text-color: {{ block.settings.text_color }};
+  "
+>
+  {{ block.settings.text }}
+</div>
 
+{{ 'text-config.css' | asset_url | stylesheet_tag }}
 
+<script>
+  {
+    {
+      'main-banner.js' | asset_url;
+    }
+  }
+  defer;
+</script>
 
 {% schema %}
 {
-  "name": "Text Block",
+  "name": "Text",
+  "tag": null,
   "settings": [
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "text",
       "label": "Text"
     },
     {
       "type": "range",
-      "id": "text-size",
+      "id": "font_size",
       "label": "Text Size",
       "min": 1,
       "max": 100,
       "step": 1,
-      "default": 16
+      "default": 16,
+      "unit": "px"
     },
     {
       "type": "range",
-      "id": "font-weight",
+      "id": "font_weight",
       "label": "Font Weight",
       "min": 100,
       "max": 800,
       "step": 100,
       "default": 400
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Block"
     }
   ]
 }

@@ -1,0 +1,16 @@
+.grid-block {
+    display: grid;
+    grid-template-columns: var(--column-setting) auto;
+    grid-template-rows: var(--row-setting) auto;
+    align-items: center;
+    justify-content: center;
+    background-color: rebeccapurple;
+}
+
+.grid-block-c {
+    display: grid;
+    grid-template-columns: var(--column-setting) auto;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}

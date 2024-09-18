@@ -3,6 +3,24 @@
     "main_banner_GHHeKg": {
       "type": "main-banner",
       "blocks": {
+        "text_block_f9ReQ4": {
+          "type": "text-block",
+          "settings": {
+            "text": "<p>FIND CLOTHES THAT MATCHES YOUR STYLE<\/p>",
+            "font_size": 100,
+            "font_weight": 700,
+            "text_color": "#000000"
+          }
+        },
+        "text_block_XyccJW": {
+          "type": "text-block",
+          "settings": {
+            "text": "<p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.<\/p>",
+            "font_size": 34,
+            "font_weight": 300,
+            "text_color": "#000000"
+          }
+        },
         "achivement_caTi3t": {
           "type": "achivement",
           "settings": {
@@ -13,19 +31,29 @@
             "number-customer": 30000,
             "text-customer": "Happy Customers"
           }
+        },
+        "button_block_EQA8M8": {
+          "type": "button-block",
+          "settings": {
+            "button-text": "Shop",
+            "button-color": "#121212",
+            "button-text-color": "#f3f3f3",
+            "button-width": "25%",
+            "button-height": 60,
+            "button-radius": 40,
+            "button-posittion-vertical": 60,
+            "button-posittion-horizontal": 0
+          }
         }
       },
       "block_order": [
-        "achivement_caTi3t"
+        "text_block_f9ReQ4",
+        "text_block_XyccJW",
+        "achivement_caTi3t",
+        "button_block_EQA8M8"
       ],
       "settings": {
-        "title": "<p>FIND CLOTHES <\/p><p>THAT MATCHES <\/p><p>YOUR STYLE <\/p>",
-        "subtitle": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
-        "image": "shopify:\/\/shop_images\/theme_cover_image.jpg",
-        "range-option": 30,
-        "text-align": "left",
-        "color-title": "#121212",
-        "color-subtitle": "#ffffff"
+        "image": "shopify:\/\/shop_images\/header-image.png"
       }
     },
     "featured_logo_En8LCF": {
@@ -75,20 +103,19 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "",
-        "heading_size": "h2",
+        "title": "NEW ARRIVALS",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 24,
-        "columns_desktop": 4,
+        "collection": "automated-collection",
+        "products_to_show": 5,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "outline",
         "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,

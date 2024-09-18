@@ -1,8 +1,11 @@
+{% comment %} * This is a CSS * {% endcomment %}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{% comment %} * End CSS * {% endcomment %}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -58,20 +61,20 @@
   endif
 -%}
 
-<div
-  class="color-{{ section.settings.color_scheme }} isolate gradient"
->
+<div>
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+     
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
+      
       {%- if section.settings.description != blank
         or section.settings.show_description
         and section.settings.collection.description != empty
@@ -146,6 +149,7 @@
           {%- endfor -%}
         {%- endfor -%}
       </ul>
+
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons">
           <button
@@ -180,7 +184,6 @@
       {%- endif -%}
     </slider-component>
 
-   
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
@@ -333,13 +336,6 @@
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
       "default": false
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "scheme-1"
     },
     {
       "type": "header",

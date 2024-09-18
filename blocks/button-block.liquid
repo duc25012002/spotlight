@@ -1,0 +1,114 @@
+<div class="banner-button">
+  <button id="{{ block.id }}">{{ block.settings['button-text'] }}</button>
+</div>
+
+<style>
+  #{{ block.id }} {
+      background-color: {{ block.settings['button-color'] }};
+      width: {{ block.settings['button-width'] }};
+      color: {{ block.settings['button-text-color'] }};
+      height: {{ block.settings['button-height'] | divided_by: 16 }}em;
+      border-radius: {{ block.settings['button-radius'] | divided_by: 16 }}em;
+    }
+
+    .banner-button {
+      top: {{ block.settings['button-posittion-vertical'] }}%;
+      display: flex;
+      justify-content: start;
+      width: 100%;
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Button Block",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Text"
+    },
+    {
+      "type": "color",
+      "id": "button-color",
+      "label": "Button Color"
+    },
+    {
+      "type": "color",
+      "id": "button-text-color",
+      "label": "Button Text Color"
+    },
+    {
+      "type": "select",
+      "id": "button-width",
+      "label": "Button Width",
+      "options": [
+        {
+          "value": "100%",
+          "label": "100%"
+        },
+        {
+          "value": "50%",
+          "label": "50%"
+        },
+        {
+          "value": "25%",
+          "label": "25%"
+        },
+        {
+          "value": "15%",
+          "label": "15%"
+        }
+      ]
+    },
+
+    {
+      "type": "range",
+      "id": "button-height",
+      "label": "Button Height",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "unit": "px"
+    },
+
+    {
+      "type": "range",
+      "id": "button-radius",
+      "label": "Button Radius",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button-posittion-vertical",
+      "label": "Position Vertical",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "button-posittion-horizontal",
+      "label": "Position Horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "unit": "%"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Button Block"
+    }
+  ]
+}
+{% endschema %}

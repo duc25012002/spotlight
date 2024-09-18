@@ -1,22 +1,35 @@
-<div class="achievement-item">
-  <div>{{ block.settings['number-brand'] }}</div>
-  <div>{{ block.settings['text-brand'] }}</div>
-</div>
+<div class="achievement-container">
+  <div class="achievement-item">
+    <div>{{ block.settings['number-brand'] }}</div>
+    <div>{{ block.settings['text-brand'] }}</div>
+  </div>
 
-<div class="achievement-item">
-  <div>{{ block.settings['number-quality'] }}</div>
-  <div>{{ block.settings['text-quality'] }}</div>
-</div>
+  <div class="achievement-item">
+    <div>{{ block.settings['number-quality'] }}</div>
+    <div>{{ block.settings['text-quality'] }}</div>
+  </div>
 
-<div class="achievement-item">
-  <div>{{ block.settings['number-customer'] }}</div>
-  <div>{{ block.settings['text-customer'] }}</div>
+  <div class="achievement-item">
+    <div>{{ block.settings['number-customer'] }}</div>
+    <div>{{ block.settings['text-customer'] }}</div>
+  </div>
 </div>
 
 <style>
   .achievement-item > div:first-child {
     font-weight: bold;
     font-size: 3rem;
+  }
+  .achievement-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+  }
+  .achievement-item {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
   }
 </style>
 

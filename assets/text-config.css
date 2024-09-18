@@ -1,0 +1,32 @@
+.text {
+    margin: 0;
+    padding: 0;
+    container-name: text-responsive;
+    container-type: inline-size;
+    line-clamp: 2;
+    -webkit-line-clamp: 2 !important;
+    line-height: 1.5;
+}
+.text {
+    width: 50%;
+}
+.text > * {
+    margin: 0;
+    padding: 0;
+}
+
+@container text-responsive (max-width: 992px) {
+    .text > * {
+        font-size: var(--text-size);
+        font-weight: var(--text-weight);
+        color: var(--text-color);
+    }
+}
+
+@container text-responsive (min-width: 993px) {
+    .text > * {
+        font-size: var(--text-size);
+        font-weight: var(--text-weight);
+        color: var(--text-color);
+    }
+}

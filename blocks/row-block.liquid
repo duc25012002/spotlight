@@ -1,0 +1,37 @@
+{{ 'block-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="grid-block" style="--row-setting: {{ block.settings.row_setting }};">{% content_for "blocks" %}</div>
+
+{% schema %}
+{
+  "name": "Row",
+  "tag": null,
+  "blocks": [{ "type": "column-block" }, { "type": "text-block" }],
+  "settings": [
+    {
+      "type": "select",
+      "id": "row_setting",
+      "label": "Row Settings",
+      "options": [
+        {
+          "value": "1",
+          "label": "One Row"
+        },
+        {
+          "value": "2",
+          "label": "Two Row"
+        },
+        {
+          "value": "3",
+          "label": "Three Row"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Row"
+    }
+  ]
+}
+{% endschema %}
